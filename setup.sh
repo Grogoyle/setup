@@ -16,6 +16,10 @@ nvm use v0.10.12
 # http://jshint.com/
 npm install -g jshint
 
+# needed for grader.js
+npm install cheerio
+npm install commander
+
 # Install rlwrap to provide libreadline features with node
 # See: http://nodejs.org/api/repl.html#repl_repl
 sudo apt-get install -y rlwrap
@@ -25,16 +29,20 @@ sudo apt-get install -y rlwrap
 sudo apt-add-repository -y ppa:cassou/emacs
 sudo apt-get update
 sudo apt-get install -y emacs24 emacs24-el emacs24-common-non-dfsg
+# pdf2txt
+sudo apt-get install python-pdfminer
 
 # git pull and install dotfiles as well
 cd $HOME
+git clone https://github.com/Grogoyle/coursera.git
+git clone https://github.com/Grogoyle/bitstarter.git
+
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
 fi
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
-
 git clone https://github.com/Grogoyle/dotfiles.git
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
@@ -47,4 +55,5 @@ ln -sf dotfiles/.emacs.d .
 # git init
 # git commit -m "first commit"
 # git remote add origin git@github.com:Grogoyle/setup.git
+# git remote add upstream https://github.com/octocat/Spoon-Knife.git
 # git push -u origin master
