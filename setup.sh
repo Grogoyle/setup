@@ -34,16 +34,13 @@ sudo apt-get install python-pdfminer
 
 # git pull and install dotfiles as well
 cd $HOME
-git clone git@github.com/Grogoyle/coursera.git
-git clone git@github.com/Grogoyle/bitstarter.git
-
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
 fi
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
-git clone git@github.com/Grogoyle/dotfiles.git
+git clone https://github.com/Grogoyle/dotfiles.git
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
@@ -55,6 +52,10 @@ git config --global user.email "steve@grog.com"
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=3600'
 git init
+
+git clone git@github.com/Grogoyle/coursera.git
+git clone git@github.com/Grogoyle/bitstarter.git
+
 # git commit -m "first commit"
 # git remote add origin git@github.com:Grogoyle/setup.git
 # git remote add upstream https://github.com/octocat/Spoon-Knife.git
