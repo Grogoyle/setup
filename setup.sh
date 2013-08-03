@@ -34,8 +34,8 @@ sudo apt-get install python-pdfminer
 
 # git pull and install dotfiles as well
 cd $HOME
-git clone https://github.com/Grogoyle/coursera.git
-git clone https://github.com/Grogoyle/bitstarter.git
+git clone git@github.com/Grogoyle/coursera.git
+git clone git@github.com/Grogoyle/bitstarter.git
 
 if [ -d ./dotfiles/ ]; then
     mv dotfiles dotfiles.old
