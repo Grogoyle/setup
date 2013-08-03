@@ -50,10 +50,14 @@ ln -sb dotfiles/.bashrc .
 ln -sb dotfiles/.bashrc_custom .
 ln -sf dotfiles/.emacs.d .
 
-# git config --global user.name "Steve Burns"
-# git config --global user.email "steve@grog.com"
-# git init
+git config --global user.name "Grogoyle"
+git config --global user.email "steve@grog.com"
+git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=3600'
+git init
 # git commit -m "first commit"
 # git remote add origin git@github.com:Grogoyle/setup.git
 # git remote add upstream https://github.com/octocat/Spoon-Knife.git
 # git push -u origin master
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
